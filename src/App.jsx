@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://script.google.com/macros/s/AKfycbxDWXNtx0A52O1O2fYdZNt-MYMkHdznbJ-RkJWp8PU_4xbIGd2ub_nSKkJ7DcMIA7lXcA/exec')
+    fetch('https://script.google.com/macros/s/AKfycby2xrZ1wsll241kuY0kB4McVNX0nQ27foYkM4ChU-mVihulQ5IwaZDy6Qq_Q_2ya8N08A/exec')
       .then((response) => response.json())
       .then((json) => {
         setData(json); // Assuming the response is an array, update the state
@@ -19,7 +19,7 @@ function App() {
       <h1>Student data</h1>
       <div className="cards-container">
         {data.map((item, index) => (
-          <Card key={index} title={item.Name} content={`Roll No: ${item['Roll No']}`} /> 
+          <Card key={index} name={item.Name} role={item.Roll} course={item.Course} year={item.Year} />
         ))}
       </div>
     </div>
